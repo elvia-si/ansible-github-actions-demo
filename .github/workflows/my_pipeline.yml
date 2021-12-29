@@ -16,13 +16,20 @@ jobs:
       
       - name: Terraform setup
         uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_wrapper: false #otherwise terraform output fails
+      
+      - name: Terraform format
+        run: terraform fmt -check
+        continue-on-error: true
       
       - name: Terraform init
         run: terraform init
-      
-      - name: Terraform format
-        run: terraform fmt
-      
+
       - name: Terraform plan
         run: terraform plan
+        continue-on-error: true
+      
+      - name: Terraform apply
+        run: terraform apply -auto-approve
         continue-on-error: true
