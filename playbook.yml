@@ -1,0 +1,17 @@
+---
+- become: yes
+  hosts: webserver
+  gather_facts: yes
+
+    
+  # tasks:
+  # - name: Add the user 'ec2-user' and add it to 'sudo'
+  #   user:
+  #     name: ec2-user
+  #     group: sudo
+  
+  # - name: Add SSH key to 'ec2-user'
+  #   authorized_key:
+  #     user: ec2-user
+  #     state: present
+  #     key: "{{ lookup('file', pub_key) }}"

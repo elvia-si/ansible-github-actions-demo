@@ -33,3 +33,9 @@ jobs:
       - name: Terraform apply
         run: terraform apply -auto-approve
         continue-on-error: true
+      
+      - name: assign ec2 ip to a variable
+        run: terraform output ec2_instance_ip >> webserver_ip
+      
+      # - name: update the inventory hosts with the variable value
+      #   run: 
