@@ -1,3 +1,7 @@
+provider "aws" {
+  region = "eu-west-1"
+}
+
 module "network" {
   source = "github.com/pasc-ed/talent-academy-vpc-module"
 

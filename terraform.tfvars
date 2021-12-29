@@ -2,6 +2,7 @@
 vpc_cidr = "10.0.0.0/16"
 vpc_name = "new-vpc-from-module"
 region   = "eu-west-1"
+
 # IG
 internet_gw_name = "talent-academy-new-INT-GW"
 
