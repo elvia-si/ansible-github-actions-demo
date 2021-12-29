@@ -9,9 +9,10 @@ internet_gw_name = "talent-academy-new-INT-GW"
 ## SUBNETS
 # PUBLIC
 public_a_cidr = "10.0.11.0/24"
-
-#SECURITY GROUPS
-sg_name = "new-sg-from-module"
+public_b_cidr = "10.0.12.0/24"
+public_c_cidr = "10.0.13.0/24"
+# PRIVATE
+private_a_cidr = "10.0.21.0/24"
 
 # Instance
 keypair_name = "test_ssh_key"

@@ -27,7 +27,21 @@ variable "public_a_cidr" {
   type        = string
 }
 
+variable "public_b_cidr" {
+  description = "CIDR of the public Subnet in AZ B"
+  type        = string
+}
 
+variable "public_c_cidr" {
+  description = "CIDR of the public Subnet in AZ C"
+  type        = string
+}
+
+# PRIVATE
+variable "private_a_cidr" {
+  description = "CIDR of the private Subnet in AZ A"
+  type        = string
+}
 
 # INSTANCE
 variable "instance_type" {
