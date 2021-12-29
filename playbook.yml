@@ -1,6 +1,6 @@
 ---
-- become: yes
-  hosts: webserver
+- hosts: webserver
+  become: yes
   gather_facts: yes
 
     
