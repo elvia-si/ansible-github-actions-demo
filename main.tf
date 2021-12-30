@@ -75,4 +75,23 @@ resource "aws_instance" "my_public_server" {
   key_name               = var.keypair_name
   subnet_id              = module.network.public_subnet_a_id
   vpc_security_group_ids = [aws_security_group.my_app_sg.id]
+
+  tags = {
+    Name = "MyServer"
+  }
+
+  provisioner "remote-exec" {
+inline = ["echo 'ssh is now connected'"]
+
+connection {
+type = "ssh"
+user = "ec2-user"
+private_key = file(var.private_key_path)
+host = aws_instance.my_public_server.public_ip
+}
+}
+
+provisioner "local-exec" {
+command = "ansible-playbook -i ${aws_instance.my_public_server.public_ip}, --private-key ${var.private_key_path} playbook.yml"
+}
 }

@@ -54,3 +54,8 @@ variable "keypair_name" {
   description = "Name of my key pair on the console"
   type        = string
 }
+
+variable "private_key_path" {
+  description = "path of my private key"
+  type        = string
+}
