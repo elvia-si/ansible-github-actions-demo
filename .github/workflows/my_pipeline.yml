@@ -34,11 +34,11 @@ jobs:
         run: terraform apply -auto-approve
         continue-on-error: true
       
-      - name: assign ec2 ip to a variable
-        run: terraform output ec2_instance_ip >> webserver_ip
+      # - name: assign ec2 ip to a variable
+      #   run: terraform output ec2_instance_ip >> webserver_ip
       
-      - name: destroy
-        run: terraform destroy -auto-approve
+      # - name: destroy
+      #   run: terraform destroy -auto-approve
       
       # - name: update the inventory hosts with the variable value
       #   run: 
