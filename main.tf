@@ -86,7 +86,7 @@ resource "aws_instance" "my_public_server" {
     connection {
     type = "ssh"
     user = "ec2-user"
-    private_key = file("${path.module}/test_ssh_key")
+    private_key = "${file(var.private_key_path)}"
     host = aws_instance.my_public_server.public_ip
     }
   }
