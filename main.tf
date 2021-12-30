@@ -81,17 +81,17 @@ resource "aws_instance" "my_public_server" {
   }
 
   provisioner "remote-exec" {
-inline = ["echo 'ssh is now connected'"]
+  inline = ["echo 'ssh is now connected'"]
 
-connection {
-type = "ssh"
-user = "ec2-user"
-private_key = file(var.private_key_path)
-host = aws_instance.my_public_server.public_ip
-}
-}
+    connection {
+    type = "ssh"
+    user = "ec2-user"
+    private_key = file("${path.module}/test_ssh_key")
+    host = aws_instance.my_public_server.public_ip
+    }
+  }
 
-provisioner "local-exec" {
-command = "ansible-playbook -i ${aws_instance.my_public_server.public_ip}, --private-key ${var.private_key_path} playbook.yml"
-}
+  provisioner "local-exec" {
+  command = "ansible-playbook -i ${aws_instance.my_public_server.public_ip}, --private-key ${var.private_key_path} playbook.yml"
+  }
 }

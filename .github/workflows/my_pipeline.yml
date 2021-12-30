@@ -20,7 +20,7 @@ jobs:
           terraform_wrapper: false #otherwise terraform output fails
       
       - name: Terraform format
-        run: terraform fmt -check
+        run: terraform fmt 
         continue-on-error: true
       
       - name: Terraform init
