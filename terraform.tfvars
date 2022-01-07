@@ -17,4 +17,4 @@ private_a_cidr = "10.0.21.0/24"
 # Instance
 keypair_name = "test_ssh_key"
 
-private_key_path = "${path.module}/test_ssh_key"
+private_key_path = "/home/.ssh/test_ssh_key"
